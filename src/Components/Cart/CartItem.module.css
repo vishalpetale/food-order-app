@@ -1,0 +1,65 @@
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-items: space-between;
+  padding: 1rem 0;
+  border-bottom: 2px solid #333;
+}
+.item {
+  flex: 1;
+}
+.item h2 {
+  font-size: 1.5rem;
+}
+.item span {
+  font-weight: bold;
+  color: #8a2b06;
+}
+.amount {
+  flex: 1;
+  max-width: fit-content;
+  align-self: flex-end;
+  border: 1px solid #ccc;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  color: #363636;
+
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.actions {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.actions button {
+  font: inherit;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #8a2b06;
+  border: 1px solid #8a2b06;
+  width: 3rem;
+  text-align: center;
+  border-radius: 6px;
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 1rem;
+  margin: 0.25rem;
+}
+@media (min-width: 768px) {
+  .actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+.actions button:not(:last-child) {
+  margin-right: 0.3rem;
+}
+.actions button:hover,
+.actions button:active {
+  background-color: #8a2b06;
+  color: white;
+}
