@@ -13,11 +13,6 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 10;
 }
-@media (max-width: 600px) {
-  .header h1 {
-    font-size: 1.5rem;
-  }
-}
 
 .main-image {
   width: 100%;
@@ -31,4 +26,28 @@
   height: 100%;
   object-fit: cover;
   transform: rotateZ(-4deg) translateY(-4rem) translateX(-1rem);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 4rem;
+  height: 4rem;
+}
+.logo h1 {
+  padding: 0;
+  margin: 0.5rem;
+  margin-left: 1rem;
+}
+
+@media (max-width: 820px) {
+  .logo h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .logo img {
+    display: none;
+  }
 }
