@@ -9,6 +9,7 @@ function Cart(props) {
   const [checkout, setCheckout] = useState(false);
   const [sendingReq, setSendingReq] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState(null);
 
   const cartCtx = useContext(CartContext);
   const totalAmount = `₹ ${cartCtx.totalAmount.toFixed(2)}`;
@@ -45,12 +46,20 @@ function Cart(props) {
       );
       const data = await response.json();
 
+      if (!response.ok) {
+        throw new Error(
+          data.message || "Could not place order. Please try later."
+        );
+      }
+
       setSendingReq(false);
       setIsSubmitted(true);
       cartCtx.clearCart();
 
       console.log("Order is Placed successfully.");
-    } catch (error) {}
+    } catch (error) {
+      setError(`${error.message}. Please try again.`);
+    }
   };
 
   const cartItems = cartCtx.items.map((item) => (
@@ -110,10 +119,12 @@ function Cart(props) {
       </div>
     </>
   );
+  const isErrorContent = <p className={classes["info-text"]}>{error}</p>;
 
   return (
     <Modal onCartClose={props.onCartClose}>
-      {sendingReq && sendingReqContent}
+      {sendingReq && !error && sendingReqContent}
+      {error && isErrorContent}
       {isSubmitted && isSubmittedContent}
       {!sendingReq && !isSubmitted && cartContent}
     </Modal>

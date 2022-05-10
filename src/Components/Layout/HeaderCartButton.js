@@ -35,7 +35,7 @@ function HeaderCardButton(props) {
       <span className={classes.icon}>
         <CartIcon />
       </span>
-      <span>Your Cart</span>
+      <span>Your cart</span>
       <span className={classes.badge}>{noOfCartItems}</span>
     </button>
   );

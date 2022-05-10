@@ -36,18 +36,6 @@
   background-color: #92320c;
 }
 
-@media (max-width: 800px) {
-  .button {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.9rem;
-  }
-  .icon {
-    display: none;
-  }
-  .badge {
-    padding: 0.25rem 0.5rem;
-  }
-}
 .bump {
   animation: bump 300ms ease-out;
 }

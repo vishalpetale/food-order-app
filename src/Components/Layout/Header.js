@@ -8,7 +8,7 @@ function Header(props) {
     <>
       <header className={classes.header}>
         <div className={classes.logo}>
-          <img src={Logo}></img>
+          <img alt="" src={Logo}></img>
           <h1>The Food Order App</h1>
         </div>
         <HeaderCardButton onCartOpen={props.onCartOpen} />
